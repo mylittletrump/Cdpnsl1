@@ -25,9 +25,9 @@
   <!-- =======================
        FILE MENU SECTION
        ======================= -->
-  <div class="flexcol file-menu" style=" z-index:4; ">
+  <div class="flexcol file-menu" style="position:fixed; width:100%; height:100%; z-index:4;">
   
-  <div class="flexbox" style="flex-direction: column;">
+  <div class="flexsec" style="flex-direction: column;">
     <div class="flex-button" id="btn-reset" style="color:var(--powr1-red)";>
       <i class="fas fa-undo"></i>
       <span class="meta">reset</span>
@@ -39,13 +39,13 @@
   </div>
 
 
-  <div class="flexbox" id="project-files" style="flex-direction: column;background: var(--powr1-white); color: var(--powr1-dark);">
+  <div class="flexsec" id="project-files" style="flex-direction: column; background: var(--powr1-white);">
     <!-- динамически добавляемые кнопки файлов -->
   </div>
   
   
 
-  <div class="flexbox" id="export-functions" style="flex-direction: column;">
+  <div class="flexsec" id="export-functions" style="flex-direction: column;">
     <div class="flex-button" id="btn-export">
       <i class="fas fa-file-archive"></i>
       <span class="meta">export to zip</span>

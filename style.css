@@ -40,13 +40,19 @@ body {
   height: 100vh;
 }
 
+@media (min-width: 768px) {
+  .section {
+    flex-direction: row;
+  }
+}
+
 .flexcol {
   display: flex;
   flex-direction: column;
 }
 
 .flexsec {
-background: var(--powr1-dark);
+  background: var(--powr1-dark);
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -74,15 +80,15 @@ background: var(--powr1-dark);
   align-items: center;
   justify-content: center;
   gap: 2px;
-  
+
   padding: 8px;
   color: var(--powr1-light);
   cursor: pointer;
   transition: background-color 0.1s ease;
   user-select: none;
   border-radius:25px;
-  
--webkit-tap-highlight-color: transparent;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .flex-button:active {
@@ -90,16 +96,12 @@ background: var(--powr1-dark);
 }
 
 @keyframes buttonPress {
-  0% {
-    
-  }
+  0% {}
   50% {
     background-color: var(--powr1-red);
     color: var(--powr1-white);
   }
-  100% {
-    
-  }
+  100% {}
 }
 
 .flex-button .fas {
@@ -118,14 +120,12 @@ background: var(--powr1-dark);
    CODE EDITOR STYLES
    ======================= */
 #code-editor {
-  
   height: 100%;
   padding: 15px;
   background: none;
   color: var(--powr1-white);
   border: none;
   resize: none;
-  
   font-size: 10px;
   line-height: 1.5;
   tab-size: 2;
@@ -149,31 +149,29 @@ background: var(--powr1-dark);
   display: none;
 }
 
-#toggle-column:checked ~ .section .editor {
+#toggle-column:checked ~ .section .input {
   display: none;
 }
 
-#toggle-column:checked ~ .section .result {
+#toggle-column:checked ~ .section .output {
   flex: 1 0 100%;
 }
 
-/* Скрываем меню файл по умолчанию */
+/* Меню файл */
 .file-menu {
   display: none;
 }
 
-/* Показываем меню файл, когда чекбокс активен */
-#toggle-file-menu:checked ~ .file-menu {
+#toggle-file-menu:checked ~ .section .file-menu {
   display: flex;
 }
 
-/* Скрываем меню эдит по умолчанию */
+/* Меню эдит */
 .edit-menu {
   display: none;
 }
 
-/* Показываем меню эдит, когда чекбокс активен */
-#toggle-edit-menu:checked ~ .edit-menu {
+#toggle-edit-menu:checked ~ .section .edit-menu {
   display: flex;
 }
 
@@ -188,10 +186,6 @@ background: var(--powr1-dark);
    RESPONSIVE STYLES
    ======================= */
 @media (min-width: 768px) {
-  .section {
-    flex-direction: row;
-  }
-  
   .flex-button {
     min-height: auto;
     padding: 8px;

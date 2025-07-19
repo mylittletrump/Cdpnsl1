@@ -61,12 +61,12 @@ body {
 }
 
 .flexcol {
+background: var(--powr1-dark);
   display: flex;
   flex-direction: column;
 }
 
 .flexsec {
-  background: var(--powr1-dark);
   display: flex;
   flex-direction: row;
   gap: 16px;

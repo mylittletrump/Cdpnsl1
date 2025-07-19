@@ -19,6 +19,7 @@ const projectFilesContainer = document.getElementById('project-files');
 const btnClearMenu = document.getElementById('btn-clear-menu');
 const btnCopyMenu = document.getElementById('btn-copy-menu');
 const btnPasteMenu = document.getElementById('btn-paste-menu');
+const btnUndo = document.getElementById('btn-undo');
 const btnRun = document.getElementById('btn-run');
 const btnReset = document.getElementById('btn-reset');
 const btnNew = document.getElementById('btn-new');

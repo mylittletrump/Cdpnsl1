@@ -40,6 +40,20 @@ body {
   height: 100vh;
 }
 
+.input-column,
+.output-column {
+  position: relative;
+}
+
+.input-column {
+  flex: 50%;
+}
+
+.output-column {
+  flex: 1;
+  background: var(--powr1-white);
+}
+
 @media (min-width: 768px) {
   .section {
     flex-direction: row;
@@ -80,14 +94,12 @@ body {
   align-items: center;
   justify-content: center;
   gap: 2px;
-
   padding: 8px;
   color: var(--powr1-light);
   cursor: pointer;
   transition: background-color 0.1s ease;
   user-select: none;
   border-radius:25px;
-
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -136,43 +148,46 @@ body {
 }
 
 /* =======================
-   OUTPUT FRAME STYLES
+   MENU STYLES
    ======================= */
-#output-frame {
-  background: none;
-}
-
-/* =======================
-   TOGGLE CONTROLS
-   ======================= */
-#toggle-column {
-  display: none;
-}
-
-#toggle-column:checked ~ .section .input {
-  display: none;
-}
-
-#toggle-column:checked ~ .section .output {
-  flex: 1 0 100%;
-}
-
-/* Меню файл */
 .file-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
   display: none;
+  background: var(--powr1-dark);
+}
+
+.edit-menu {
+  position: fixed;
+  width: 70%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: none;
+  background: var(--powr1-dark);
 }
 
 #toggle-file-menu:checked ~ .section .file-menu {
   display: flex;
 }
 
-/* Меню эдит */
-.edit-menu {
+#toggle-edit-menu:checked ~ .section .edit-menu {
+  display: flex;
+}
+
+/* =======================
+   TOGGLE COLUMN STYLES
+   ======================= */
+#toggle-column:checked ~ .section .input-column {
   display: none;
 }
 
-#toggle-edit-menu:checked ~ .section .edit-menu {
-  display: flex;
+#toggle-column:checked ~ .section .output-column {
+  flex: 1 0 100%;
 }
 
 /* =======================

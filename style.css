@@ -46,6 +46,7 @@ body {
 }
 
 .flexsec {
+background: var(--powr1-dark);
   display: flex;
   flex-direction: row;
   gap: 16px;

@@ -6,32 +6,22 @@
   <title>Code Pencil v1.0</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- =======================
-       TOGGLE CONTROLS 
-       ======================= -->
+  <!-- Toggle controls -->
   <input type="checkbox" id="toggle-column" hidden>
   <input type="checkbox" id="toggle-file-menu" hidden>
   <input type="checkbox" id="toggle-edit-menu" hidden>
 
-  <!-- =======================
-       MAIN APP CONTAINER
-       ======================= -->
+  <!-- Main container -->
   <div class="section">
-    <!-- =======================
-         INPUT COLUMN (formerly editor)
-         ======================= -->
-    <div class="flexcol input" style="flex: 50%;">
-
-      <!-- =======================
-           MENU SECTION - FILE
-           ======================= -->
-      <div class="flexcol file-menu" style="position:fixed; width:100%; height:100%; z-index:4;">
+    <!-- Left column -->
+    <div class="input-column">
+      <!-- File menu (hidden by default) -->
+      <div class="file-menu">
         <div class="flexsec" style="flex-direction: column; align-items: center;">
           <div class="flex-button" id="btn-reset" style="color:var(--powr1-red)";>
             <i class="fas fa-undo"></i>
@@ -44,7 +34,7 @@
         </div>
 
         <div class="flexsec" id="project-files" style="flex-direction: column; align-items: center;">
-          <!-- динамически добавляемые кнопки файлов -->
+          <!-- Dynamic file buttons will be added here -->
         </div>
 
         <div class="flexsec" id="export-functions" style="flex-direction: column; align-items: center;">
@@ -63,10 +53,8 @@
         </div>
       </div>
 
-      <!-- =======================
-           MENU SECTION - EDIT
-           ======================= -->
-      <div class="flexcol edit-menu" style="position:fixed; width:70%; height:50%; top:50%; left:50%; transform:translate(-50%,-50%); z-index:10;">
+      <!-- Edit menu (hidden by default) -->
+      <div class="edit-menu">
         <div class="flexbox" style="flex-direction: column; align-items: center;">
           <div class="flex-button btnclear" id="btn-clear-menu" style="color:var(--powr1-red);">
             <i class="fas fa-broom"></i>
@@ -83,9 +71,7 @@
         </div>
       </div>
 
-      <!-- =======================
-           TOOLBAR SECTION
-           ======================= -->
+      <!-- Toolbar -->
       <div class="flexsec bar-container" style="flex:0 0 5vh; max-width:600px;padding:14px;">
         <div class="flexbox bar-main" style="flex:0 0 80%;z-index:5;">
           <label for="toggle-file-menu" class="flex-button btnfile" title="File operations">
@@ -103,16 +89,14 @@
         </div>
       </div>
 
-      <!-- =======================
-           CODE EDITOR SECTION
-           ======================= -->
-      
+      <!-- Code editor -->
+      <div class="flexsec coder" style="flex:1;">
+        <textarea id="code-editor" spellcheck="false" placeholder="Enter your code here..."></textarea>
+      </div>
 
-      <!-- =======================
-           STATUS BAR SECTION
-           ======================= -->
+      <!-- Status bar -->
       <div class="flexsec bar-status" style="flex:0 0 3vh; background:var(--powr1-black);">
-        <div class="flexbox statusbox" id="status-bar" style=" flex:0 0 100%;">
+        <div class="flexbox statusbox" id="status-bar" style="flex:0 0 100%;">
           <div class="flex-button" id="current-file" title="Current file">
             <span class="meta" style="color:var(--powr1-blue);">index.html</span>
           </div>
@@ -129,10 +113,8 @@
       </div>
     </div>
 
-    <!-- =======================
-         OUTPUT COLUMN
-         ======================= -->
-    <div class="flexcol output" style="flex:1; background:var(--powr1-white);">
+    <!-- Right column -->
+    <div class="output-column">
       <iframe id="output-frame" style="width:100%; height:100%; border:none;"></iframe>
       <label for="toggle-column" class="flex-button btnrun" id="btn-run" style="position:absolute;top:15px;right:15px;background:var(--powr1-white); color:var(--powr1-dark); width:50px;">
         <i class="fas fa-play"></i>
@@ -140,9 +122,7 @@
     </div>
   </div>
 
-  <!-- =======================
-       NOTIFICATIONS CONTAINER
-       ======================= -->
+  <!-- Notifications -->
   <div class="flexbox" id="notifications" style="position: fixed; bottom: 20px; right: 20px; display: none;"></div>
 
   <script src="script.js"></script>

@@ -26,39 +26,46 @@
          INPUT COLUMN
          ======================= -->
     <div class="flexcol input" style="flex: 50%;">
-      <div class="delete">Input column content will be here</div>
+      <div class="delete" style="height: 100%; display: flex; justify-content: center; align-items: center;">
+        INPUT COLUMN
+      </div>
     </div>
 
     <!-- =======================
          OUTPUT COLUMN
          ======================= -->
-    <div class="flexcol output" style="flex: 50%;">
-      <div class="delete">Output column content will be here</div>
+    <div class="flexcol output" style="flex:1; background:var(--powr1-white);">
+      <div class="delete" style="height: 100%; display: flex; justify-content: center; align-items: center;">
+        OUTPUT COLUMN
+      </div>
     </div>
-  </div>
 
-  <!-- =======================
-       MENU AND NOTIFICATIONS
-       ======================= -->
-  <div class="flexcol menus-and-notifications">
     <!-- =======================
          MENU SECTION - FILE
          ======================= -->
-    <div class="flexcol file-menu">
-      <!-- File menu content will be here -->
+    <div class="flexcol file-menu" style="position:fixed; width:100%; height:100%; z-index:4;">
+      <div class="delete" style="height: 100%; display: flex; justify-content: center; align-items: center;">
+        FILE MENU
+      </div>
     </div>
 
     <!-- =======================
          MENU SECTION - EDIT
          ======================= -->
-    <div class="flexcol edit-menu">
-      <!-- Edit menu content will be here -->
+    <div class="flexcol edit-menu" style="position:fixed; width:70%; height:50%; top:50%; left:50%; transform:translate(-50%,-50%); z-index:10;">
+      <div class="delete" style="height: 100%; display: flex; justify-content: center; align-items: center;">
+        EDIT MENU
+      </div>
     </div>
 
     <!-- =======================
-         NOTIFICATIONS CONTAINER
+         NOTIFICATIONS
          ======================= -->
-    <div class="flexbox notifications" style="position: fixed; bottom: 20px; right: 20px; display: none;"></div>
+    <div class="flexbox notifications" style="position: fixed; bottom: 20px; right: 20px; display: none;">
+      <div class="delete">
+        NOTIFICATIONS
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
